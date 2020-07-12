@@ -1,0 +1,38 @@
+package Enunciado01;
+
+/**
+ *
+ * @author Fabrissio
+ */
+public class CNodo {
+    
+    private String nombre;
+    private CNodo siguiente;
+
+    public CNodo(String nom, CNodo siguiente) {
+        this.nombre = nom;
+        this.siguiente = siguiente;
+    }
+    
+    public CNodo (){
+        nombre = "";
+        siguiente = null;
+    }
+
+    public String getNombre() {
+        return nombre;
+    }
+
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
+    }
+
+    public CNodo getSiguiente() {
+        return siguiente;
+    }
+
+    public void setSiguiente(CNodo siguiente) {
+        this.siguiente = siguiente;
+    }
+
+}
