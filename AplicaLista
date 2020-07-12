@@ -1,0 +1,60 @@
+package Enunciado01;
+
+import java.util.Scanner;
+
+/**
+ *
+ * @author Fabrissio
+ */
+public class AplicaLista {
+    
+    static Scanner teclado = new Scanner(System.in);
+    static Lista lista = new Lista();
+    static CNodo nodo;
+    
+    public static void main(String[] args) {
+        
+        menu();
+    }
+    
+    static void menu() {
+        int opcion;
+        do {
+            System.out.println("\nMenu de Opciones");
+            System.out.println("================");
+            System.out.println("[1] Ingresar Datos");
+            System.out.println("[2] Eliminar datos");
+            System.out.println("[3] Mostrar lista");
+            System.out.println("=============");
+            System.out.println("[0] Salir");
+            System.out.print("Ingresar una opcion: ");
+            opcion = teclado.nextInt();
+
+            switch (opcion) {
+                case 1:
+                    ingresarDato();
+                    break;
+
+                case 2:
+                    lista.eliminar();
+                    break;
+
+                case 3:
+                    lista.mostrar();
+                break;
+                
+                default:
+                    System.out.println("Ingrese otra opcion..");
+            
+            }
+    
+        }while (opcion != 0);
+    }
+    
+    static void ingresarDato() {
+        System.out.print("Ingrese un nombre: ");
+        String nom = teclado.next();
+        lista.agregarInicio(nom);
+    }
+       
+}
