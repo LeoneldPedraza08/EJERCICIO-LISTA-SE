@@ -1,0 +1,59 @@
+package Enunciado01;
+
+import java.util.Scanner;
+
+/**
+ *
+ * @author Fabrissio
+ */
+public class Lista {
+    
+    private CNodo inicio;
+    private int tope;
+    
+    static Scanner teclado = new Scanner(System.in);
+
+    public Lista() {
+        inicio = null;
+        tope = 0;
+    }
+
+    public boolean estaVacio() {
+        return inicio == null;
+    }
+    
+    public void agregarInicio(String nom) {
+        CNodo nuevo = new CNodo();
+        nuevo.setNombre(nom);
+        if (estaVacio()) { //inicio es igual a null
+            inicio = nuevo;
+        } else {
+            nuevo.setSiguiente(inicio);
+            inicio = nuevo;
+        }
+        tope++;
+    }
+    
+    public void mostrar() {
+        if (!estaVacio()) {
+            CNodo aux = inicio;
+            while (aux != null) {
+                System.out.print("[" + aux.getNombre() + "] " + " --> ");
+                aux = aux.getSiguiente();
+            }
+        } else {
+            System.out.println("La lista esta vacia...");
+        }
+    }
+    
+    public void eliminar(){
+        if (estaVacio()) { //inicio es igual a null
+           System.out.print("La lista esta vacia..");
+        } else {
+            inicio = inicio.getSiguiente();
+            System.out.println("Dato eliminado..");
+        }
+        tope--;
+    }
+    
+}
